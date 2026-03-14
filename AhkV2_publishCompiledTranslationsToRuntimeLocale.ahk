@@ -23,7 +23,7 @@ Example Usage:
     During normal use, leave the call commented out.
     Uncomment it only when publishing compiled translations.
 
-    #Include <AhkV2_publishCompiledTranslationsToRuntimeLocale>
+    ;  #Include <AhkV2_publishCompiledTranslationsToRuntimeLocale>
     ;  AhkV2_publishCompiledTranslationsToRuntimeLocale()
 */
 
