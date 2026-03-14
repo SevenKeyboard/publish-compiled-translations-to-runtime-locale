@@ -27,6 +27,15 @@ Example Usage:
     ;  AhkV2_publishCompiledTranslationsToRuntimeLocale()
 */
 
+/*
+%A_MyDocuments%\
+└─ AutoHotkey\
+   └─ lib\
+      └─ AhkV1_publishCompiledTranslationsToRuntimeLocale.ahk
+my-app\
+└─ MyApp.ahk
+*/
+
 class VersionManager_AhkV2_publishCompiledTranslationsToRuntimeLocale
 {
     static _ := this._init()
