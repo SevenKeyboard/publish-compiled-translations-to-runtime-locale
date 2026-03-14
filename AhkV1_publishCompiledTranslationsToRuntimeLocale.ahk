@@ -1,14 +1,14 @@
 ﻿#Requires AutoHotkey v1.1.21+
 ;==============================================================
-; AhkV1_publishCompiledTranslationsToRuntimeLocale — Publishes AhkI18n compiled translations into the L10nUtils runtime locale layout.
+; AhkV1_publishCompiledTranslationsToRuntimeLocale — Publishes I18n compiled translations into the L10nUtils runtime locale layout.
 ;
 ; GitHub: https://github.com/SevenKeyboard/publish-compiled-translations-to-runtime-locale
 ; Author: SevenKeyboard Ltd. (2026)
 ; License: The Unlicense
 ;
 ; Documentation / References:
-;   AhkI18n
-;     https://github.com/SevenKeyboard/ahk-i18n
+;   I18n
+;     https://github.com/SevenKeyboard/i18n
 ;   L10nUtils
 ;     https://github.com/SevenKeyboard/l10n-utils
 ;==============================================================
