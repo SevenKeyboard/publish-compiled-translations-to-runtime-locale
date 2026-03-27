@@ -1,4 +1,5 @@
-﻿#Requires AutoHotkey v1.1.21+
+﻿;@I18n-IgnoreFile
+#Requires AutoHotkey v1.1.21+
 ;==============================================================
 ; AhkV1_publishCompiledTranslationsToRuntimeLocale — Publishes I18n compiled translations into the L10nUtils runtime locale layout
 ;
