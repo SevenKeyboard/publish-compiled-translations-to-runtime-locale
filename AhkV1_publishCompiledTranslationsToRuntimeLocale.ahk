@@ -61,15 +61,15 @@ AhkV1_publishCompiledTranslationsToRuntimeLocale(domain := "UNSET_F74BFA06", loc
     outputDebug % "Publishing compiled translations to runtime locale..."
     /*
     from:   .\languages\<domain>\<locale>.mo
-    to:     .\locale\<locale>.UTF-8\LC_MESSAGES\<domain>.mo
+    to:     .\locale\<locale>\LC_MESSAGES\<domain>.mo
     */
     if (domain !== "")    {                                                         ;  default
         if (locale !== "")    {                                                     ;  es_ES
             sourcePath := languagesDir "\" domain "\" locale ".mo"                  ;  .\languages\default\es_ES.mo
             if (fileExist(sourcePath))    {
-                targetDir := localeDir "\" locale ".UTF-8\LC_MESSAGES"              ;  .\locale\es_ES.UTF-8\LC_MESSAGES
+                targetDir := localeDir "\" locale "\LC_MESSAGES"                    ;  .\locale\es_ES\LC_MESSAGES
                 fileCreateDir % targetDir
-                targetPath := targetDir "\" domain ".mo"                            ;  .\locale\es_ES.UTF-8\LC_MESSAGES\default.mo
+                targetPath := targetDir "\" domain ".mo"                            ;  .\locale\es_ES\LC_MESSAGES\default.mo
                 fileCopy % sourcePath, % targetPath, 1
                 ++copiedCount
                 outputDebug % "Success: Copied """ sourcePath """ to """ targetPath """."
@@ -84,9 +84,9 @@ AhkV1_publishCompiledTranslationsToRuntimeLocale(domain := "UNSET_F74BFA06", loc
         {
             loopSourcePath := A_LoopFileFullPath                                    ;  .\languages\default\<locale>.mo
             splitPath loopSourcePath,,,, loopLocale                                 ;  <locale>
-            loopTargetDir := localeDir "\" loopLocale ".UTF-8\LC_MESSAGES"          ;  .\locale\<locale>.UTF-8\LC_MESSAGES
+            loopTargetDir := localeDir "\" loopLocale "\LC_MESSAGES"                ;  .\locale\<locale>\LC_MESSAGES
             fileCreateDir % loopTargetDir
-            loopTargetPath := loopTargetDir "\" domain ".mo"                        ;  .\locale\<locale>.UTF-8\LC_MESSAGES\default.mo
+            loopTargetPath := loopTargetDir "\" domain ".mo"                        ;  .\locale\<locale>\LC_MESSAGES\default.mo
             fileCopy % loopSourcePath, % loopTargetPath, 1
             ++copiedCount
             outputDebug % "Success: Copied """ loopSourcePath """ to """ loopTargetPath """."
@@ -100,9 +100,9 @@ AhkV1_publishCompiledTranslationsToRuntimeLocale(domain := "UNSET_F74BFA06", loc
         if (locale !== "")    {                                                     ;  es_ES
             sourcePath := A_LoopFileFullPath "\" locale ".mo"                       ;  .\languages\<domain>\es_ES.mo
             if (fileExist(sourcePath))    {
-                targetDir := localeDir "\" locale ".UTF-8\LC_MESSAGES"              ;  .\locale\es_ES.UTF-8\LC_MESSAGES
+                targetDir := localeDir "\" locale "\LC_MESSAGES"                    ;  .\locale\es_ES\LC_MESSAGES
                 fileCreateDir % targetDir
-                targetPath := targetDir "\" loopDomain ".mo"                        ;  .\locale\es_ES.UTF-8\LC_MESSAGES\<domain>.mo
+                targetPath := targetDir "\" loopDomain ".mo"                        ;  .\locale\es_ES\LC_MESSAGES\<domain>.mo
                 fileCopy % sourcePath, % targetPath, 1
                 ++copiedCount
                 outputDebug % "Success: Copied """ sourcePath """ to """ targetPath """."
@@ -116,9 +116,9 @@ AhkV1_publishCompiledTranslationsToRuntimeLocale(domain := "UNSET_F74BFA06", loc
         {
             loopSourcePath := A_LoopFileFullPath                                    ;  .\languages\<domain>\<locale>.mo
             splitPath loopSourcePath,,,, loopLocale                                 ;  <locale>
-            loopTargetDir := localeDir "\" loopLocale ".UTF-8\LC_MESSAGES"          ;  .\locale\<locale>.UTF-8\LC_MESSAGES
+            loopTargetDir := localeDir "\" loopLocale "\LC_MESSAGES"                ;  .\locale\<locale>\LC_MESSAGES
             fileCreateDir % loopTargetDir
-            loopTargetPath := loopTargetDir "\" loopDomain ".mo"                    ;  .\locale\<locale>.UTF-8\LC_MESSAGES\<domain>.mo
+            loopTargetPath := loopTargetDir "\" loopDomain ".mo"                    ;  .\locale\<locale>\LC_MESSAGES\<domain>.mo
             fileCopy % loopSourcePath, % loopTargetPath, 1
             ++copiedCount
             outputDebug % "Success: Copied """ loopSourcePath """ to """ loopTargetPath """."
